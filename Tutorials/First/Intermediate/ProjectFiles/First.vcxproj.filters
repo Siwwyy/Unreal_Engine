@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\First.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{95C8D1DD-BF31-46C9-AD1E-529A742D8E10}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\First.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\FirstEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{2DB1C0F2-620E-45DE-AAFA-7C54DEE9667E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\First">
+      <UniqueIdentifier>{23D72B0D-D700-4E53-B4E0-96F86DED7817}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\First\Custom_Actor.cpp">
+      <Filter>Source\First</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\First\Custom_Actor.h">
+      <Filter>Source\First</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\First\First.Build.cs">
+      <Filter>Source\First</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\First\First.cpp">
+      <Filter>Source\First</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\First\First.h">
+      <Filter>Source\First</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\First\FirstCharacter.cpp">
+      <Filter>Source\First</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\First\FirstCharacter.h">
+      <Filter>Source\First</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\First\FirstGameMode.cpp">
+      <Filter>Source\First</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\First\FirstGameMode.h">
+      <Filter>Source\First</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

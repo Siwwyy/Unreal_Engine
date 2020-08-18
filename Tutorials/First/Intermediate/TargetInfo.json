@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "First",
+			"Path": "E:\\!!PROJECTS_VS\\!!UNREAL_ENGINE\\Tutorials\\First\\Source\\First.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "FirstEditor",
+			"Path": "E:\\!!PROJECTS_VS\\!!UNREAL_ENGINE\\Tutorials\\First\\Source\\FirstEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

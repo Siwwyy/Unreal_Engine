@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\!!PROJECTS_VS\\!!UNREAL_ENGINE\\Tutorials\\First\\Source\\First\\First.Build.cs",
+		"E:\\!!PROJECTS_VS\\!!UNREAL_ENGINE\\Tutorials\\First\\Source\\First.Target.cs",
+		"E:\\!!PROJECTS_VS\\!!UNREAL_ENGINE\\Tutorials\\First\\Source\\FirstEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.3"
+}
