@@ -1,0 +1,2 @@
+E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
+E:\UNREAL ENGINE\Tutorials\MyProject\Source\MyProject\MyProject.h

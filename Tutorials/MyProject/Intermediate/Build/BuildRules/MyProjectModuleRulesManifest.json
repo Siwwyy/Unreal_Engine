@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\UNREAL ENGINE\\Tutorials\\MyProject\\Source\\MyProject\\MyProject.Build.cs",
+		"E:\\UNREAL ENGINE\\Tutorials\\MyProject\\Source\\MyProject.Target.cs",
+		"E:\\UNREAL ENGINE\\Tutorials\\MyProject\\Source\\MyProjectEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.3"
+}

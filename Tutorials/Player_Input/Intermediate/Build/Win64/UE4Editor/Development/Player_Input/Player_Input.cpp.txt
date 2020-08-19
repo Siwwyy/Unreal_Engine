@@ -1,0 +1,2 @@
+E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Definitions.Player_Input.h
+E:\UNREAL ENGINE\Tutorials\Player_Input\Source\Player_Input\Player_Input.h

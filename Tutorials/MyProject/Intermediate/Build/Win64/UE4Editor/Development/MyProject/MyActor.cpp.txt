@@ -1,0 +1,3 @@
+E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
+E:\UNREAL ENGINE\Tutorials\MyProject\Source\MyProject\MyActor.h
+E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyActor.generated.h

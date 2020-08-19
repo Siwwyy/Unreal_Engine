@@ -1,3 +1,0 @@
-E:\!!PROJECTS_VS\!!UNREAL_ENGINE\Tutorials\First\Intermediate\Build\Win64\UE4Editor\Development\First\Definitions.First.h
-E:\!!PROJECTS_VS\!!UNREAL_ENGINE\Tutorials\First\Source\First\Custom_Actor.h
-E:\!!PROJECTS_VS\!!UNREAL_ENGINE\Tutorials\First\Intermediate\Build\Win64\UE4Editor\Inc\First\Custom_Actor.generated.h

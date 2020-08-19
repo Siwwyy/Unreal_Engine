@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Player_Input",
+			"Path": "E:\\UNREAL ENGINE\\Tutorials\\Player_Input\\Source\\Player_Input.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Player_InputEditor",
+			"Path": "E:\\UNREAL ENGINE\\Tutorials\\Player_Input\\Source\\Player_InputEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

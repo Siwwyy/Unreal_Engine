@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\UNREAL ENGINE\\Tutorials\\Player_Input\\Source\\Player_Input\\Player_Input.Build.cs",
+		"E:\\UNREAL ENGINE\\Tutorials\\Player_Input\\Source\\Player_Input.Target.cs",
+		"E:\\UNREAL ENGINE\\Tutorials\\Player_Input\\Source\\Player_InputEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.3"
+}

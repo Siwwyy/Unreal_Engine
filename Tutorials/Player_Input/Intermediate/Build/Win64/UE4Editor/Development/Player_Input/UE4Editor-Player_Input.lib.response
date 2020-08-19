@@ -1,0 +1,22 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Player_Input.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\Player_InputEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\MyActor.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\MyPawn.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Player_Input.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Player_InputCharacter.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Player_InputGameMode.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\MyActor.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\MyPawn.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Player_Input.init.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Player_InputCharacter.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Player_InputGameMode.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\Default.rc2.res"
+/OUT:"E:\UNREAL ENGINE\Tutorials\Player_Input\Intermediate\Build\Win64\UE4Editor\Development\Player_Input\UE4Editor-Player_Input.lib"
+/INCLUDE:IMPLEMENT_MODULE_Player_Input

@@ -1,0 +1,20 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-MyProject-5634.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyActor.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProject.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProjectCharacter.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProjectGameMode.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyActor.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProject.init.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProjectCharacter.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProjectGameMode.gen.cpp.obj"
+"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Default.rc2.res"
+/OUT:"E:\UNREAL ENGINE\Tutorials\MyProject\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-5634.lib"
+/INCLUDE:IMPLEMENT_MODULE_MyProject
