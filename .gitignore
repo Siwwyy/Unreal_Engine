@@ -12,6 +12,7 @@
 *.mp4
 *.mov
 *.pickle
+*.uasset
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
