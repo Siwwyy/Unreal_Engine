@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Light_Door",
+			"Path": "E:\\UNREAL ENGINE\\Tutorials\\Light_Door\\Source\\Light_Door.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Light_DoorEditor",
+			"Path": "E:\\UNREAL ENGINE\\Tutorials\\Light_Door\\Source\\Light_DoorEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

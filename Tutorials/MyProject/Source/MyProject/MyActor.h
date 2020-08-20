@@ -27,6 +27,9 @@ protected:
 	//UPROPERTY(EditAnywhere, Category = "Components_Vector")
 	//std::vector<UStaticMeshComponent*> vec;
 	float Running_Time;
+	FRandomStream obj;
+
+	float cos;
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
