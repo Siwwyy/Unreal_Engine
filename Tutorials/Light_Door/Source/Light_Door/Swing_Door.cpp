@@ -2,35 +2,12 @@
 
 
 #include "Swing_Door.h"
-#include "UObject/ConstructorHelpers.h"
-#include "DrawDebugHelpers.h"
-#include "Kismet/GameplayStatics.h"
-#include "Components/StaticMeshComponent.h"
-#include "Components/BoxComponent.h"
 
 // Sets default values
 ASwing_Door::ASwing_Door()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	//this->Box_Component = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Component"));
-	//this->Box_Component->InitBoxExtent(FVector(150, 100, 100));
-	//this->Box_Component->SetCollisionProfileName("Trigger");
-	//RootComponent = this->Box_Component;
-}
-
-// Called when the game starts or when spawned
-void ASwing_Door::BeginPlay()
-{
-	Super::BeginPlay();
-
-}
-
-// Called every frame
-void ASwing_Door::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 
 }
 

@@ -16,13 +16,6 @@ public:
 	ASwing_Door();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-
-	//UPROPERTY(EditAnywhere, Category = "Door")
-	//class UStaticMeshComponent* Door;
-
 	UPROPERTY(EditAnywhere, Category = "Door")
 	UStaticMesh* Door;
 
@@ -30,8 +23,6 @@ protected:
 	bool Door_Condition = true;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()
 	void Toggle_Door();

@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeLight_Door_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x0EABA087,
+				0x2908DCA7,
 				0x510ACB77,
 				METADATA_PARAMS(nullptr, 0)
 			};

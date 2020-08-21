@@ -155,9 +155,7 @@ void EmptyLinkFunctionForGeneratedCodeSwing_Door() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASwing_Door_Statics::NewProp_Door_MetaData[] = {
 		{ "Category", "Door" },
-		{ "Comment", "//UPROPERTY(EditAnywhere, Category = \"Door\")\n//class UStaticMeshComponent* Door;\n" },
 		{ "ModuleRelativePath", "Swing_Door.h" },
-		{ "ToolTip", "UPROPERTY(EditAnywhere, Category = \"Door\")\nclass UStaticMeshComponent* Door;" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASwing_Door_Statics::NewProp_Door = { "Door", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASwing_Door, Door), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASwing_Door_Statics::NewProp_Door_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASwing_Door_Statics::NewProp_Door_MetaData)) };
@@ -191,7 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeSwing_Door() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASwing_Door, 2248597570);
+	IMPLEMENT_CLASS(ASwing_Door, 216225362);
 	template<> LIGHT_DOOR_API UClass* StaticClass<ASwing_Door>()
 	{
 		return ASwing_Door::StaticClass();

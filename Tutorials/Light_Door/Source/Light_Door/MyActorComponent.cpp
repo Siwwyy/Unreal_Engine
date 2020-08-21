@@ -22,17 +22,6 @@ UMyActorComponent::UMyActorComponent()
 	// ...
 }
 
-
-// Called when the game starts
-void UMyActorComponent::BeginPlay()
-{
-	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("HELLO WORLD"));
-	// ...
-
-}
-
-
 // Called every frame
 void UMyActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -47,20 +36,8 @@ void UMyActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 	{
 		PlayerInputComponent->BindAction("ObjectInteraction", IE_Pressed, this, &UMyActorComponent::Toggle_Light_Switch);
 		PlayerInputComponent->BindAction("DoorAction", IE_Pressed, this, &UMyActorComponent::Toggle_Door);
-		//PlayerInputComponent->BindAction("ObjectInteraction", IE_Pressed, this, &UMyActorComponent::TestFun);
 	}
 }
-
-//void UMyActorComponent::TestFun()
-//{
-//	//AActor* test = GetTracedActor();
-//	FVector Player_Hand_Location = My_Character->GetMesh()->GetBoneLocation("hand_r", EBoneSpaces::WorldSpace);
-//	AActor* test = GetTracedActor(Player_Hand_Location,50);
-//	if (test != nullptr)
-//	{
-//		UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *test->GetName());
-//	}
-//}
 
 AActor* UMyActorComponent::GetTracedActor()
 {

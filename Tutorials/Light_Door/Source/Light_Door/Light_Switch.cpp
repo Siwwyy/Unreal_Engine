@@ -15,20 +15,6 @@ ALight_Switch::ALight_Switch():
 
 }
 
-// Called when the game starts or when spawned
-void ALight_Switch::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void ALight_Switch::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
 void ALight_Switch::Toggle_Light()
 {
 	//UE_LOG(LogTemp, Warning, TEXT("Light turned"));
@@ -54,4 +40,3 @@ void ALight_Switch::Toggle_Light()
 	}
 
 }
-
