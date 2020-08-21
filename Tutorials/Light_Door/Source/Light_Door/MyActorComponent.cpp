@@ -8,6 +8,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Light_Switch.h"
+#include "Swing_Door.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 
@@ -45,6 +46,7 @@ void UMyActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 	if (PlayerInputComponent != nullptr)
 	{
 		PlayerInputComponent->BindAction("ObjectInteraction", IE_Pressed, this, &UMyActorComponent::Toggle_Light_Switch);
+		PlayerInputComponent->BindAction("DoorAction", IE_Pressed, this, &UMyActorComponent::Toggle_Door);
 		//PlayerInputComponent->BindAction("ObjectInteraction", IE_Pressed, this, &UMyActorComponent::TestFun);
 	}
 }
@@ -185,6 +187,19 @@ void UMyActorComponent::Toggle_Light_Switch()
 		if (Light_ptr != nullptr)
 		{
 			Light_ptr->Toggle_Light();
+		}
+	}
+}
+
+void UMyActorComponent::Toggle_Door()
+{
+	AActor* Actor = GetTracedActor();
+	if (Actor != nullptr)
+	{
+		ASwing_Door* Door_ptr = Cast<ASwing_Door>(Actor);
+		if (Door_ptr != nullptr)
+		{
+			Door_ptr->Toggle_Door();
 		}
 	}
 }

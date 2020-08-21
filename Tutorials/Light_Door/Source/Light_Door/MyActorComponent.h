@@ -36,5 +36,6 @@ private:
 	class ACharacter* My_Character;
 
 	void Toggle_Light_Switch();
+	void Toggle_Door();
 
 };

@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeLight_Door_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x23F6AD3D,
-				0x1CB82B1D,
+				0x0EABA087,
+				0x510ACB77,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
