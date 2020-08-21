@@ -35,12 +35,6 @@
     <None Include="..\..\Source\Light_Door\Light_Door.Build.cs">
       <Filter>Source\Light_Door</Filter>
     </None>
-    <ClCompile Include="..\..\Source\Light_Door\Light_Door.cpp">
-      <Filter>Source\Light_Door</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Light_Door\Light_Door.h">
-      <Filter>Source\Light_Door</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Light_Door\Light_DoorCharacter.cpp">
       <Filter>Source\Light_Door</Filter>
     </ClCompile>
