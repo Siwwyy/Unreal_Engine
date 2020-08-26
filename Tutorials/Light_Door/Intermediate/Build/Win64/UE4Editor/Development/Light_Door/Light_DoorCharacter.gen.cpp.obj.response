@@ -230,8 +230,8 @@
 /I Runtime\Experimental\GeometryCollectionSimulationCore\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I "E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Inc\Light_Door"
-/I "E:\UNREAL ENGINE\Tutorials\Light_Door\Source"
+/I "E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Inc\Light_Door"
+/I "E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Source"
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ThirdParty\PhysX3\PxShared\include
@@ -263,12 +263,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\Light_DoorEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\Light_DoorEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\Light_DoorEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Inc\Light_Door\Light_DoorCharacter.gen.cpp"
-/FI"E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Development\Light_Door\Definitions.Light_Door.h"
-/Fo"E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Development\Light_Door\Light_DoorCharacter.gen.cpp.obj"
+/FI"E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\Light_DoorEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\Light_DoorEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\Light_DoorEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Inc\Light_Door\Light_DoorCharacter.gen.cpp"
+/FI"E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Development\Light_Door\Definitions.Light_Door.h"
+/Fo"E:\UNREAL ENGINE\Unreal_Engine\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Development\Light_Door\Light_DoorCharacter.gen.cpp.obj"
 /TP
 /GR-
 /W4
