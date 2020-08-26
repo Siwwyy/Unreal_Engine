@@ -1,5 +1,0 @@
-E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Development\Light_Door\Definitions.Light_Door.h
-D:\Program Files\Epic\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-D:\Program Files\Epic\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-E:\UNREAL ENGINE\Tutorials\Light_Door\Source\Light_Door/Light_Switching_Component.h
-E:\UNREAL ENGINE\Tutorials\Light_Door\Intermediate\Build\Win64\UE4Editor\Inc\Light_Door\Light_Switching_Component.generated.h

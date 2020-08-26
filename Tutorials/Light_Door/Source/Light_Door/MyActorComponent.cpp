@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "MyActorComponent.h"
@@ -12,24 +11,17 @@
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 
-// Sets default values for this component's properties
 UMyActorComponent::UMyActorComponent()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
-// Called every frame
 void UMyActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
 
-	this->My_Character = Cast<ACharacter>(GetOwner());
+	My_Character = Cast<ACharacter>(GetOwner());
 	UInputComponent* PlayerInputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
 
 	if (PlayerInputComponent != nullptr)
@@ -80,63 +72,6 @@ AActor* UMyActorComponent::GetTracedActor()
 		AActor* Hit_Actor = Hit_result.GetActor();
 		if (Hit_Actor != nullptr)
 		{
-			//UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *Hit_Actor->GetName());
-
-			return Hit_Actor;
-		}
-		else
-		{
-			return nullptr;
-		}
-	}
-	else
-	{
-		return nullptr;
-	}
-}
-
-AActor* UMyActorComponent::GetTracedActor(FVector location, float Length)
-{
-
-	FVector Player_Location{};
-	FRotator Player_Rotation{};
-
-	UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetPlayerViewPoint
-	(
-		OUT Player_Location,
-		OUT Player_Rotation
-	);
-
-	FVector Line_Start = location + Player_Rotation.Vector();
-	FVector Line_End = location + Player_Rotation.Vector() * Length;
-
-	DrawDebugLine(
-		GetWorld(),
-		Line_Start,
-		Line_End,
-		FColor::Red,
-		false,
-		2.0f,
-		0,
-		5.0f
-	);
-
-	FHitResult Hit_result{};
-	FCollisionQueryParams LineParams(FName(""), false, GetOwner());
-
-	if (GetWorld()->LineTraceSingleByChannel(
-		OUT Hit_result,
-		Line_Start,
-		Line_End,
-		ECollisionChannel::ECC_WorldDynamic,
-		LineParams
-	))
-	{
-		AActor* Hit_Actor = Hit_result.GetActor();
-		if (Hit_Actor != nullptr)
-		{
-			//UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *Hit_Actor->GetName());
-
 			return Hit_Actor;
 		}
 		else
@@ -152,14 +87,9 @@ AActor* UMyActorComponent::GetTracedActor(FVector location, float Length)
 
 void UMyActorComponent::Toggle_Light_Switch()
 {
-	//UE_LOG(LogTemp, Warning, TEXT("IN TOGGLE SWITCH"));
-	//UE_LOG(LogTemp, Warning, TEXT("%s"), *FPaths::GetPath("../"));
-	//AActor* Actor = GetTracedActor();
-
 	AActor* Actor = GetTracedActor();
 	if (Actor != nullptr)
 	{
-		//UE_LOG(LogTemp, Warning, TEXT("Actor hit: %s"), *Actor->GetName());
 		ALight_Switch* Light_ptr = Cast<ALight_Switch>(Actor);
 		if (Light_ptr != nullptr)
 		{
@@ -170,14 +100,20 @@ void UMyActorComponent::Toggle_Light_Switch()
 
 void UMyActorComponent::Toggle_Door()
 {
+	static bool door_closed = true;
 	AActor* Actor = GetTracedActor();
 	if (Actor != nullptr)
 	{
-		ASwing_Door* Door_ptr = Cast<ASwing_Door>(Actor);
-		if (Door_ptr != nullptr)
+		FRotator New_Rotation = Actor->GetActorRotation();
+		if (door_closed == true)
 		{
-			Door_ptr->Toggle_Door();
+			New_Rotation.Yaw += 90.f;	//current rotation increased by ninety degrees
 		}
+		else
+		{
+			New_Rotation.Yaw -= 90.f;	//current rotation decreased by ninety degrees
+		}
+		Actor->SetActorRotation(New_Rotation);
+		door_closed = !door_closed;
 	}
 }
-

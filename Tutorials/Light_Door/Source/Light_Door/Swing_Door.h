@@ -19,22 +19,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Door")
 	UStaticMesh* Door;
 
-	const float Door_Angle = 90.f;
-	bool Door_Condition = true;
-
-public:	
-
-	UFUNCTION()
-	void Toggle_Door();
-
 private:
-	// Opens the door
-	UFUNCTION()
-	void Open_Door();
-
-	UFUNCTION()
-	void Close_Door();
-
 
 
 };

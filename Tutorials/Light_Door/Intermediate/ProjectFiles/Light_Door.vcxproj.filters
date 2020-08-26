@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Light_Door.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{098DD224-611E-4FCA-B2DB-8E2D4877BEAB}</UniqueIdentifier>
+      <UniqueIdentifier>{C959F138-79F4-4F17-A13D-B03AC08B477A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Light_Door.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{8A486C6F-9721-472F-9654-7C1632A6C01E}</UniqueIdentifier>
+      <UniqueIdentifier>{35E5620E-7820-4010-A46F-148446781E97}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,11 +30,17 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Light_Door">
-      <UniqueIdentifier>{EA9ABE27-B1C3-4D6D-9890-83292098C698}</UniqueIdentifier>
+      <UniqueIdentifier>{7572DB90-974A-4B4E-93DF-7A76911DD2BF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Light_Door\Light_Door.Build.cs">
       <Filter>Source\Light_Door</Filter>
     </None>
+    <ClCompile Include="..\..\Source\Light_Door\Light_Door.cpp">
+      <Filter>Source\Light_Door</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Light_Door\Light_Door.h">
+      <Filter>Source\Light_Door</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Light_Door\Light_DoorCharacter.cpp">
       <Filter>Source\Light_Door</Filter>
     </ClCompile>

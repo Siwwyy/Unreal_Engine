@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -13,17 +12,13 @@ class LIGHT_DOOR_API UMyActorComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
 	UMyActorComponent();
 
-protected:
-
-public:	
-	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	AActor* GetTracedActor();
-	AActor* GetTracedActor(FVector location, float Length);
+protected:
+
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Line Details")

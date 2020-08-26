@@ -12,16 +12,13 @@ class LIGHT_DOOR_API ALight_Switch : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
 	ALight_Switch();
 
+	void Toggle_Light();
 protected:
 
-public:
-
-	void Toggle_Light();
+	
 private:
-
 	bool Light_condition;
 
 	UPROPERTY(EditAnywhere, Category = "Lights")
