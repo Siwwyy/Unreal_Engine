@@ -4,31 +4,37 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Interaction_Interface.h"
-#include "Interactable_Actor.generated.h"
+#include "Interactable_Doors.generated.h"
 
 UCLASS()
-class INTERACTION_API AInteractable_Actor : public AActor, public IInteraction_Interface
+class INTERACTION_API AInteractable_Doors : public AActor, public IInteraction_Interface
 {
 	GENERATED_BODY()
 	
 public:	
-	AInteractable_Actor();
+	AInteractable_Doors();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) override;
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void StartFocus();
-	virtual void StartFocus_Implementation()override;
+	virtual void StartFocus_Implementation() override;
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void EndFocus();
-	virtual void EndFocus_Implementation()override;
+	virtual void EndFocus_Implementation() override;
 
-	virtual void BeginPlay() override;
 protected:
+	UPROPERTY(EditAnywhere, Category = "Door")
+	UStaticMesh* Door;
 
+	bool Door_Condition;
+	float Door_Opening_Angle;
 
 private:	
-	TArray<class UMeshComponent*> Meshes;
 
+	UFUNCTION(BlueprintCallable, Category = "Door")
+	void Toggle_Door();
+	void Open_Door();
+	void Close_Door();
 };
