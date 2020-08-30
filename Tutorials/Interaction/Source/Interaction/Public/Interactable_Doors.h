@@ -18,14 +18,6 @@ public:
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) override;
 
-	//UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	//void StartFocus();
-	//virtual void StartFocus_Implementation() override;
-
-	//UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	//void EndFocus();
-	//virtual void EndFocus_Implementation() override;
-
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void Focus(bool bState);
 	virtual void Focus_Implementation(bool bState) override;
@@ -35,6 +27,7 @@ protected:
 	UStaticMesh* Door;
 
 	float fDoor_Opening_Angle;
+
 	bool bDoor_Condition;
 
 private:	

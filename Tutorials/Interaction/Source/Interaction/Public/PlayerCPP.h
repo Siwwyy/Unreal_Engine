@@ -14,7 +14,6 @@ public:
 
 	APlayerCPP();
 
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(Server, Reliable, WithValidation)
@@ -28,8 +27,11 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void TurnAtRate(float Rate);
+
 	void LookUpAtRate(float Rate);
+
 	void MoveForward(float Value);
+
 	void MoveRight(float Value);
 protected:
 
@@ -43,7 +45,10 @@ protected:
 
 private:	
 	AActor* FocusedActor;
+
 	FCollisionQueryParams TraceParams;
+
+	//class Interactable_Component * Interactable_Comp;
 
 	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float fInteractionDistance;

@@ -37,21 +37,22 @@ void APlayerCPP::HandleHighlight()
 	AActor* interactable = FindActorInLineOfSide();
 	if (interactable)
 	{
-		if (interactable != FocusedActor)
+		if (interactable == FocusedActor)
 		{
-			if (FocusedActor)
-			{
-				if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
-				{
-					Interface->Execute_Focus(FocusedActor, false);
-				}
-			}
-			if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable))
-			{
-				Interface->Execute_Focus(interactable, true);
-			}
-			FocusedActor = interactable;
+			return;
 		}
+		if (FocusedActor)
+		{
+			if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
+			{
+				Interface->Execute_Focus(FocusedActor, false);
+			}
+		}
+		if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable))
+		{
+			Interface->Execute_Focus(interactable, true);
+		}
+		FocusedActor = interactable;
 	}
 	else
 	{

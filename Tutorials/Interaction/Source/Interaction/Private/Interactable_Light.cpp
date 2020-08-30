@@ -10,16 +10,6 @@ AInteractable_Light::AInteractable_Light():
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-//void AInteractable_Light::StartFocus_Implementation()
-//{
-//	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
-//}
-//
-//void AInteractable_Light::EndFocus_Implementation()
-//{
-//	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
-//}
-
 void AInteractable_Light::OnInteract_Implementation(AActor* Caller)
 {
 	Toggle_Light();
@@ -35,12 +25,13 @@ void AInteractable_Light::Toggle_Light()
 	bLight_condition = !bLight_condition;
 	for (const auto& Light : Lights)
 	{
-		if (Light)
+		if (!Light)
 		{
-			if (ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>())
-			{
-				Bulb->SetVisibility(bLight_condition, false);
-			}
+			continue;
 		}		
+		if (ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>())
+		{
+			Bulb->SetVisibility(bLight_condition, false);
+		}
 	}
 }
