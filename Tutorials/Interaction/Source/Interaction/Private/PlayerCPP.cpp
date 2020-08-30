@@ -5,10 +5,11 @@
 
 
 APlayerCPP::APlayerCPP():
-	BaseTurnRate(45.f),
-	BaseLookUpRate(45.f)
+	fBaseTurnRate(45.f),
+	fBaseLookUpRate(45.f),
+	FocusedActor(nullptr),
+	fInteractionDistance(200.f)
 {
-
 	PrimaryActorTick.bCanEverTick = true;
 
 	TraceParams = FCollisionQueryParams(FName(TEXT("Trace")), true, this);
@@ -82,7 +83,7 @@ AActor* APlayerCPP::FindActorInLineOfSide()
 	GetController()->GetPlayerViewPoint(Location, Rotator);
 
 	FVector start = Location;
-	FVector end = start + (Rotator.Vector() * InteractionDistance);
+	FVector end = start + (Rotator.Vector() * fInteractionDistance);
 
 	GetWorld()->LineTraceSingleByChannel(Hit,
 		start,
@@ -111,18 +112,18 @@ void APlayerCPP::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 void APlayerCPP::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
-	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
+	AddControllerYawInput(Rate * fBaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
 void APlayerCPP::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
-	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
+	AddControllerPitchInput(Rate * fBaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
 void APlayerCPP::MoveForward(float Value)
 {
-	if ((Controller != NULL) && (Value != 0.0f))
+	if ((Controller) && (Value != 0.0f))
 	{
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
@@ -136,7 +137,7 @@ void APlayerCPP::MoveForward(float Value)
 
 void APlayerCPP::MoveRight(float Value)
 {
-	if ((Controller != NULL) && (Value != 0.0f))
+	if ((Controller) && (Value != 0.0f))
 	{
 		// find out which way is right
 		const FRotator Rotation = Controller->GetControlRotation();

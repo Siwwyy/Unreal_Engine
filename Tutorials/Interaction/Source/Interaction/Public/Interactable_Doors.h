@@ -17,9 +17,11 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) override;
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void StartFocus();
 	virtual void StartFocus_Implementation() override;
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void EndFocus();
 	virtual void EndFocus_Implementation() override;
@@ -28,13 +30,15 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Door")
 	UStaticMesh* Door;
 
-	bool Door_Condition;
-	float Door_Opening_Angle;
+	float fDoor_Opening_Angle;
+	bool bDoor_Condition;
 
 private:	
 
 	UFUNCTION(BlueprintCallable, Category = "Door")
 	void Toggle_Door();
+
 	void Open_Door();
+
 	void Close_Door();
 };

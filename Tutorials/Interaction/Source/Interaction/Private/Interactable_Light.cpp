@@ -4,10 +4,9 @@
 #include "Engine/PointLight.h"
 
 AInteractable_Light::AInteractable_Light():
-	Light_condition(true)
+	bLight_condition(true)
 {
 	PrimaryActorTick.bCanEverTick = false;
-
 }
 
 void AInteractable_Light::StartFocus_Implementation()
@@ -27,18 +26,16 @@ void AInteractable_Light::OnInteract_Implementation(AActor* Caller)
 
 void AInteractable_Light::Toggle_Light()
 {
-	Light_condition = !Light_condition;
-	for (APointLight* Light : Light_array)
+	bLight_condition = !bLight_condition;
+	for (const auto& Light : Light_array)
 	{
-		if (Light == nullptr)
+		if (Light)
 		{
-			continue;
-		}
-		ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>();
-		if (Bulb == nullptr)
-		{
-			continue;
-		}
-		Bulb->SetVisibility(Light_condition, false);
+			ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>();
+			if (Bulb)
+			{
+				Bulb->SetVisibility(bLight_condition, false);
+			}
+		}		
 	}
 }

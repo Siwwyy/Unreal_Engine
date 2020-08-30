@@ -6,6 +6,8 @@
 #include "Interaction_Interface.h"
 #include "Interactable_Actor.generated.h"
 
+class UMeshComponent;
+
 UCLASS()
 class INTERACTION_API AInteractable_Actor : public AActor, public IInteraction_Interface
 {
@@ -17,18 +19,20 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) override;
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void StartFocus();
-	virtual void StartFocus_Implementation()override;
+	virtual void StartFocus_Implementation() override;
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void EndFocus();
-	virtual void EndFocus_Implementation()override;
+	virtual void EndFocus_Implementation() override;
 
 	virtual void BeginPlay() override;
 protected:
 
 
 private:	
-	TArray<class UMeshComponent*> Meshes;
+	TArray<UMeshComponent*> Meshes;
 
 };

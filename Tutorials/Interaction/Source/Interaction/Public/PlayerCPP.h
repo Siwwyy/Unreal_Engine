@@ -26,6 +26,7 @@ public:
 	AActor* FindActorInLineOfSide();
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
 	void TurnAtRate(float Rate);
 	void LookUpAtRate(float Rate);
 	void MoveForward(float Value);
@@ -34,16 +35,18 @@ protected:
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-	float BaseTurnRate;
+	float fBaseTurnRate;
 
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-	float BaseLookUpRate;
+	float fBaseLookUpRate;
 
 private:	
 	AActor* FocusedActor;
+
 	UPROPERTY(EditAnywhere, Category = "Interaction")
-	float InteractionDistance = 200.f;
+	float fInteractionDistance;
+
 	FCollisionQueryParams TraceParams;
 
 };
