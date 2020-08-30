@@ -36,9 +36,6 @@ bool APlayerCPP::SrvInteract_Validate()
 
 void APlayerCPP::HandleHighlight()
 {
-	////GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off222")));
-	//UE_LOG(LogTemp, Warning, TEXT("DDDD"));
-
 	AActor* interactable = FindActorInLineOfSide();
 	if (interactable)
 	{
@@ -49,13 +46,13 @@ void APlayerCPP::HandleHighlight()
 				IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor);
 				if (Interface)
 				{
-					Interface->Execute_EndFocus(FocusedActor);
+					Interface->Execute_Focus(FocusedActor, false);
 				}
 			}
 			IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable);
 			if (Interface)
 			{
-				Interface->Execute_StartFocus(interactable);
+				Interface->Execute_Focus(interactable, true);
 			}
 			FocusedActor = interactable;
 		}
@@ -65,10 +62,9 @@ void APlayerCPP::HandleHighlight()
 		if (FocusedActor)
 		{
 			IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor);
-
 			if (Interface)
 			{
-				Interface->Execute_EndFocus(FocusedActor);
+				Interface->Execute_Focus(FocusedActor, false);
 			}
 		}
 		FocusedActor = nullptr;

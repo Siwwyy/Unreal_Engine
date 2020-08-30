@@ -43,10 +43,9 @@ protected:
 
 private:	
 	AActor* FocusedActor;
+	FCollisionQueryParams TraceParams;
 
 	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float fInteractionDistance;
-
-	FCollisionQueryParams TraceParams;
 
 };

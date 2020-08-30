@@ -7,17 +7,28 @@ AInteractable_Doors::AInteractable_Doors() :
 	bDoor_Condition(false)
 {
 	PrimaryActorTick.bCanEverTick = false;
-
 }
 
-void AInteractable_Doors::StartFocus_Implementation()
-{
-	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
-}
+//void AInteractable_Doors::StartFocus_Implementation()
+//{
+//	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
+//}
+//
+//void AInteractable_Doors::EndFocus_Implementation()
+//{
+//	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
+//}
 
-void AInteractable_Doors::EndFocus_Implementation()
+void AInteractable_Doors::Focus_Implementation(bool bState)
 {
-	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
+	if (bState)
+	{
+		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
+	}
 }
 
 void AInteractable_Doors::OnInteract_Implementation(AActor* Caller)
