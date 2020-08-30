@@ -7,7 +7,6 @@ UInteractable_Component::UInteractable_Component()
 
 }
 
-
 void UInteractable_Component::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);

@@ -4,8 +4,8 @@
 #include "Engine/PointLight.h"
 
 AInteractable_Light::AInteractable_Light():
-	bLight_condition(true),
-	Lights()
+	Lights(),
+	bLight_condition(true)
 {
 	PrimaryActorTick.bCanEverTick = false;
 }

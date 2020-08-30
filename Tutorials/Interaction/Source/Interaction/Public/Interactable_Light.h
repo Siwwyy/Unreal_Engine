@@ -26,9 +26,6 @@ public:
 
 	void Toggle_Light();
 
-protected:
-
-
 private:	
 	UPROPERTY(EditAnywhere, Category = "Light")
 	TArray<APointLight*> Lights;

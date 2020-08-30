@@ -48,8 +48,6 @@ private:
 
 	FCollisionQueryParams TraceParams;
 
-	//class Interactable_Component * Interactable_Comp;
-
 	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float fInteractionDistance;
 
