@@ -21,14 +21,7 @@ AInteractable_Doors::AInteractable_Doors() :
 
 void AInteractable_Doors::Focus_Implementation(bool bState)
 {
-	if (bState)
-	{
-		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
-	}
+	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, bState ? FString::Printf(TEXT("Focused on")) : FString::Printf(TEXT("Focused off")));
 }
 
 void AInteractable_Doors::OnInteract_Implementation(AActor* Caller)

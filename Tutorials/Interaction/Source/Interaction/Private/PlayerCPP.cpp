@@ -20,9 +20,7 @@ void APlayerCPP::SrvInteract_Implementation()
 {
 	if (FocusedActor)
 	{
-		IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor);
-
-		if (Interface)
+		if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
 		{
 			Interface->Execute_OnInteract(FocusedActor, this);
 		}
@@ -43,14 +41,12 @@ void APlayerCPP::HandleHighlight()
 		{
 			if (FocusedActor)
 			{
-				IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor);
-				if (Interface)
+				if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
 				{
 					Interface->Execute_Focus(FocusedActor, false);
 				}
 			}
-			IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable);
-			if (Interface)
+			if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable))
 			{
 				Interface->Execute_Focus(interactable, true);
 			}
@@ -61,8 +57,7 @@ void APlayerCPP::HandleHighlight()
 	{
 		if (FocusedActor)
 		{
-			IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor);
-			if (Interface)
+			if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
 			{
 				Interface->Execute_Focus(FocusedActor, false);
 			}
@@ -73,9 +68,11 @@ void APlayerCPP::HandleHighlight()
 
 AActor* APlayerCPP::FindActorInLineOfSide()
 {
-	FVector Location{};
+	FVector Location;
 	FRotator Rotator{};
 	FHitResult Hit(ForceInit);
+	Location.Normalize();	//to unit vector as a vector initialization
+	Rotator.Normalize();	//to unit vector as a vector initialization
 	GetController()->GetPlayerViewPoint(Location, Rotator);
 
 	FVector start = Location;

@@ -34,21 +34,10 @@ void AInteractable_Actor::OnInteract_Implementation(AActor* Caller)
 
 void AInteractable_Actor::Focus_Implementation(bool bState)
 {
-	if (bState)
+	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, bState ? FString::Printf(TEXT("Focused on")) : FString::Printf(TEXT("Focused off")));
+	for (const auto& Mesh : Meshes)
 	{
-		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
-		for (const auto& Mesh : Meshes)
-		{
-			Mesh->SetRenderCustomDepth(bState);
-		}
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
-		for (const auto& Mesh : Meshes)
-		{
-			Mesh->SetRenderCustomDepth(bState);
-		}
+		Mesh->SetRenderCustomDepth(bState);
 	}
 }
 
@@ -56,15 +45,15 @@ void AInteractable_Actor::BeginPlay()
 {
 	Super::BeginPlay();
 	TArray<UActorComponent*> Comp = GetComponentsByClass(UMeshComponent::StaticClass());
-	if (Comp.Num())
+	if (!Comp.Num())
 	{
-		for (const auto& Actor_Comp : Comp)
+		return;
+	}
+	for (const auto& Actor_Comp : Comp)
+	{
+		if (UMeshComponent* Mesh = Cast<UMeshComponent>(Actor_Comp))
 		{
-			UMeshComponent* Mesh = Cast<UMeshComponent>(Actor_Comp);
-			if (Mesh)
-			{
-				Meshes.Push(Mesh);
-			}
+			Meshes.Push(Mesh);
 		}
 	}
 }

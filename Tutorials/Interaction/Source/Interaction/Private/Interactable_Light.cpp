@@ -27,14 +27,7 @@ void AInteractable_Light::OnInteract_Implementation(AActor* Caller)
 
 void AInteractable_Light::Focus_Implementation(bool bState)
 {
-	if (bState)
-	{
-		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused on")));
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, FString::Printf(TEXT("Focused off")));
-	}
+	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, bState ? FString::Printf(TEXT("Focused on")) : FString::Printf(TEXT("Focused off")));
 }
 
 void AInteractable_Light::Toggle_Light()
@@ -44,8 +37,7 @@ void AInteractable_Light::Toggle_Light()
 	{
 		if (Light)
 		{
-			ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>();
-			if (Bulb)
+			if (ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>())
 			{
 				Bulb->SetVisibility(bLight_condition, false);
 			}
