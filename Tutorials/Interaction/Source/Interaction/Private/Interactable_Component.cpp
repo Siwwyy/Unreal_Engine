@@ -1,13 +1,13 @@
 
-#include "../Public/Interactable_Component.h"
+#include "Interactable_Component.h"
+
 
 UInteractable_Component::UInteractable_Component()
 {
-	PrimaryComponentTick.bCanEverTick = true;
-
+	PrimaryComponentTick.bCanEverTick = false;
 }
 
-void UInteractable_Component::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UInteractable_Component::Focus_Implementation(bool bState)
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, bState ? FString::Printf(TEXT("Focused on")) : FString::Printf(TEXT("Focused off")));
 }

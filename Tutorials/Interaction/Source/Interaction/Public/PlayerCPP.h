@@ -14,16 +14,6 @@ public:
 
 	APlayerCPP();
 
-	virtual void Tick(float DeltaTime) override;
-
-	UFUNCTION(Server, Reliable, WithValidation)
-	void SrvInteract();
-	void SrvInteract_Implementation();
-	bool SrvInteract_Validate();
-
-	void HandleHighlight();
-	AActor* FindActorInLineOfSide();
-
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void TurnAtRate(float Rate);
@@ -42,13 +32,4 @@ protected:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float fBaseLookUpRate;
-
-private:	
-	AActor* FocusedActor;
-
-	FCollisionQueryParams TraceParams;
-
-	UPROPERTY(EditAnywhere, Category = "Interaction")
-	float fInteractionDistance;
-
 };

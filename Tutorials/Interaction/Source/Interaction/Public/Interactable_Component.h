@@ -3,16 +3,21 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Interaction_Interface.h"
 #include "Interactable_Component.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class INTERACTION_API UInteractable_Component : public UActorComponent
+class INTERACTION_API UInteractable_Component : public UActorComponent, public IInteraction_Interface
 {
 	GENERATED_BODY()
 
 public:	
+
 	UInteractable_Component();
 
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
+	void Focus(bool bState);
+	virtual void Focus_Implementation(bool bState) override;
+
 };

@@ -20,17 +20,12 @@ public:
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) override;
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void Focus(bool bState);
-	virtual void Focus_Implementation(bool bState) override;
-
-	void Toggle_Light();
-
 private:	
 	UPROPERTY(EditAnywhere, Category = "Light")
 	TArray<APointLight*> Lights;
 
 	bool bLight_condition;
 
-
+	UFUNCTION(BlueprintCallable, Category = "Door")
+	void Action();
 };

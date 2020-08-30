@@ -9,17 +9,12 @@ AInteractable_Doors::AInteractable_Doors() :
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-void AInteractable_Doors::Focus_Implementation(bool bState)
-{
-	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, bState ? FString::Printf(TEXT("Focused on")) : FString::Printf(TEXT("Focused off")));
-}
-
 void AInteractable_Doors::OnInteract_Implementation(AActor* Caller)
 {
-	Toggle_Door();
+	Action();
 }
 
-void AInteractable_Doors::Toggle_Door()
+void AInteractable_Doors::Action()
 {
 	bDoor_Condition = !bDoor_Condition;
 	bDoor_Condition ? Open_Door() : Close_Door();

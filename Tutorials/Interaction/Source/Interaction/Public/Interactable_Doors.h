@@ -18,10 +18,6 @@ public:
 	void OnInteract(AActor* Caller);
 	virtual void OnInteract_Implementation(AActor* Caller) override;
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void Focus(bool bState);
-	virtual void Focus_Implementation(bool bState) override;
-
 protected:
 	UPROPERTY(EditAnywhere, Category = "Door")
 	UStaticMesh* Door;
@@ -33,7 +29,7 @@ protected:
 private:	
 
 	UFUNCTION(BlueprintCallable, Category = "Door")
-	void Toggle_Door();
+	void Action();
 
 	void Open_Door();
 
