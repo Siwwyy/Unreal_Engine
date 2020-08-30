@@ -2,8 +2,8 @@
 #include "Engine/Public/CollisionQueryParams.h"
 #include "GameFramework/Character.h"
 #include "Components/InputComponent.h"
-#include "../Public/Interaction_Component.h"
 #include "../Public/Interaction_Interface.h"
+#include "../Public/Interaction_Component.h"
 
 
 UInteraction_Component::UInteraction_Component():
