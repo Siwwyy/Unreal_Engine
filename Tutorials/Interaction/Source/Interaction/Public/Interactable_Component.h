@@ -7,12 +7,12 @@
 #include "Interactable_Component.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class INTERACTION_API UInteractable_Component : public UActorComponent, public IInteraction_Interface
 {
 	GENERATED_BODY()
 
-public:	
+public:
 
 	UInteractable_Component();
 
@@ -20,7 +20,7 @@ public:
 	void Focus(bool bState);
 	virtual void Focus_Implementation(bool bState) override;
 
-	UFUNCTION(BlueprintCallable, Category = "Interaction")
-	void Trigger(UObject* Context);
-	
+private:
+	AActor* Owner;
+
 };
