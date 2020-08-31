@@ -6,6 +6,7 @@
 #include "Interaction_Component.generated.h"
 
 class ACharacter;
+class UInteractable_Component;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class INTERACTION_API UInteraction_Component : public UActorComponent

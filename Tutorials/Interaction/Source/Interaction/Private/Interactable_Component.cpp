@@ -4,27 +4,10 @@
 
 UInteractable_Component::UInteractable_Component()
 {
-	PrimaryComponentTick.bCanEverTick = true;
-
-
+	PrimaryComponentTick.bCanEverTick = false;
 }
 
-void UInteractable_Component::BeginPlay()
+void UInteractable_Component::Focus_Implementation(bool bState)
 {
-	Super::BeginPlay();
-
-
-	
-}
-
-void UInteractable_Component::Trigger(UObject* Context)
-{
-	
-}
-
-void UInteractable_Component::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-
+	GEngine->AddOnScreenDebugMessage(0, 5, FColor::Red, bState ? FString::Printf(TEXT("Focused on")) : FString::Printf(TEXT("Focused off")));
 }

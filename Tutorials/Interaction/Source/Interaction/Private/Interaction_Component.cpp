@@ -2,8 +2,10 @@
 #include "Engine/Public/CollisionQueryParams.h"
 #include "GameFramework/Character.h"
 #include "Components/InputComponent.h"
+
 #include "../Public/Interaction_Interface.h"
 #include "../Public/Interaction_Component.h"
+#include "../Public/Interactable_Component.h"
 
 
 UInteraction_Component::UInteraction_Component():
@@ -45,15 +47,30 @@ void UInteraction_Component::HandleHighlight()
 
 		if (FocusedActor)
 		{
-			if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
+			//if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
+			//{
+			//	Interface->Execute_Focus(FocusedActor, false);
+			//}
+			if (UInteractable_Component* Component = Cast<UInteractable_Component>(FocusedActor->FindComponentByClass(UInteractable_Component::StaticClass())))
 			{
-				Interface->Execute_Focus(FocusedActor, false);
+				Component->Execute_Focus(Component, false);
 			}
 		}
 
-		if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable))
+		//if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable))
+		//{
+		//	Interface->Execute_Focus(interactable, true);
+		//}
+		//if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(interactable))
+		//{
+		//	if (UInteractable_Component* Component = Cast<UInteractable_Component>(FocusedActor->FindComponentByClass(UInteractable_Component::StaticClass())))
+		//	{
+		//		Component->Execute_Focus(Component, true);
+		//	}
+		//}
+		if (UInteractable_Component* Component = Cast<UInteractable_Component>(interactable->FindComponentByClass(UInteractable_Component::StaticClass())))
 		{
-			Interface->Execute_Focus(interactable, true);
+			Component->Execute_Focus(Component, true);
 		}
 		FocusedActor = interactable;
 	}
@@ -64,10 +81,16 @@ void UInteraction_Component::HandleHighlight()
 			return;
 		}
 
-		if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
+		//if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
+		//{
+		//	Interface->Execute_Focus(FocusedActor, false);
+		//}
+
+		if (UInteractable_Component* Component = Cast<UInteractable_Component>(FocusedActor->FindComponentByClass(UInteractable_Component::StaticClass())))
 		{
-			Interface->Execute_Focus(FocusedActor, false);
+			Component->Execute_Focus(Component, true);
 		}
+
 		FocusedActor = nullptr;
 	}
 }
