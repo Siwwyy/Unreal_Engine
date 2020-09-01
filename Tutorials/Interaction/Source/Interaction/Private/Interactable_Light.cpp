@@ -1,6 +1,6 @@
 
 #include "Interactable_Light.h"
-#include "Components/LightComponent.h"
+
 #include "Engine/PointLight.h"
 
 AInteractable_Light::AInteractable_Light():
@@ -19,10 +19,6 @@ void AInteractable_Light::Action_Implementation()
 		{
 			continue;
 		}
-
-		if (ULightComponent* Bulb = Light->FindComponentByClass<ULightComponent>())
-		{
-			Bulb->SetVisibility(bLight_condition, false);
-		}
+		Light->SetBrightness(bLight_condition ? 10.f : 0.f);
 	}
 }

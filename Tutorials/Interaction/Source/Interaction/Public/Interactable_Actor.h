@@ -20,9 +20,4 @@ public:
 	void Action();
 	virtual void Action_Implementation() override;
 
-	virtual void BeginPlay() override;
-
-private:	
-	TArray<UMeshComponent*> Meshes;
-
 };

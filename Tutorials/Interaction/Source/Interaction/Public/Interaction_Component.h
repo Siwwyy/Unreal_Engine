@@ -28,8 +28,10 @@ public:
 	virtual void BeginPlay() override;
 
 protected:
+	UPROPERTY()
 	AActor* FocusedActor;
 
+	UPROPERTY()
 	ACharacter* Player;	//owner of interaction component
 
 	FCollisionQueryParams TraceParams;

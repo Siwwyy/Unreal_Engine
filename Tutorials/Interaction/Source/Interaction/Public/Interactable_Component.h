@@ -24,6 +24,7 @@ public:
 	virtual void Focus_Implementation(bool bState) override;
 
 private:
+	UPROPERTY()
 	AActor* Owner;
 
 };
