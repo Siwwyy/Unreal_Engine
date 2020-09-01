@@ -2,8 +2,7 @@
 #include "../Public/Interactable_Actor.h"
 
 
-AInteractable_Actor::AInteractable_Actor()/*:
-	Meshes()*/
+AInteractable_Actor::AInteractable_Actor()
 {
 	PrimaryActorTick.bCanEverTick = false;
 }

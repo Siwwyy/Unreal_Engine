@@ -6,8 +6,6 @@
 #include "Actor_Interface.h"
 #include "Interactable_Actor.generated.h"
 
-class UMeshComponent;
-
 UCLASS()
 class INTERACTION_API AInteractable_Actor : public AActor, public IActor_Interface
 {
