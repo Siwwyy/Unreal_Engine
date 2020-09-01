@@ -3,13 +3,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Interaction_Interface.h"
+#include "Actor_Interface.h"
 #include "Interactable_Light.generated.h"
 
 class APointLight;
 
 UCLASS()
-class INTERACTION_API AInteractable_Light : public AActor, public IInteraction_Interface
+class INTERACTION_API AInteractable_Light : public AActor, public IActor_Interface
 {
 	GENERATED_BODY()
 	
@@ -17,8 +17,8 @@ public:
 	AInteractable_Light();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void OnInteract(AActor* Caller);
-	virtual void OnInteract_Implementation(AActor* Caller) override;
+	void Action();
+	virtual void Action_Implementation() override;
 
 private:	
 	UPROPERTY(EditAnywhere, Category = "Light")
@@ -26,6 +26,4 @@ private:
 
 	bool bLight_condition;
 
-	UFUNCTION(BlueprintCallable, Category = "Door")
-	void Action();
 };

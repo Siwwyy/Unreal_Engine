@@ -3,11 +3,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Interaction_Interface.h"
+#include "Actor_Interface.h"
 #include "Interactable_Doors.generated.h"
 
 UCLASS()
-class INTERACTION_API AInteractable_Doors : public AActor, public IInteraction_Interface
+class INTERACTION_API AInteractable_Doors : public AActor, public IActor_Interface
 {
 	GENERATED_BODY()
 	
@@ -15,8 +15,8 @@ public:
 	AInteractable_Doors();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void OnInteract(AActor* Caller);
-	virtual void OnInteract_Implementation(AActor* Caller) override;
+	void Action();
+	virtual void Action_Implementation() override;
 
 protected:
 	UPROPERTY(EditAnywhere, Category = "Door")
@@ -27,10 +27,6 @@ protected:
 	bool bDoor_Condition;
 
 private:	
-
-	UFUNCTION(BlueprintCallable, Category = "Door")
-	void Action();
-
 	void Open_Door();
 
 	void Close_Door();

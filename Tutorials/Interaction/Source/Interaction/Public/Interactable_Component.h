@@ -6,7 +6,6 @@
 #include "Interaction_Interface.h"
 #include "Interactable_Component.generated.h"
 
-
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class INTERACTION_API UInteractable_Component : public UActorComponent, public IInteraction_Interface
 {
@@ -15,6 +14,10 @@ class INTERACTION_API UInteractable_Component : public UActorComponent, public I
 public:
 
 	UInteractable_Component();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
+	void OnInteract(AActor* Caller);
+	virtual void OnInteract_Implementation(AActor* Caller) override;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
 	void Focus(bool bState);

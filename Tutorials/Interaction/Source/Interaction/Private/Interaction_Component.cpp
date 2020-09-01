@@ -26,12 +26,14 @@ void UInteraction_Component::TickComponent(float DeltaTime, ELevelTick TickType,
 
 void UInteraction_Component::Interaction()
 {
-	if (FocusedActor)
+	if (!FocusedActor)
 	{
-		if (IInteraction_Interface* Interface = Cast<IInteraction_Interface>(FocusedActor))
-		{
-			Interface->Execute_OnInteract(FocusedActor, Player);
-		}
+		return;
+	}
+
+	if (UInteractable_Component* Component = Cast<UInteractable_Component>(FocusedActor->FindComponentByClass(UInteractable_Component::StaticClass())))
+	{
+		Component->Execute_OnInteract(Component, FocusedActor);
 	}
 }
 

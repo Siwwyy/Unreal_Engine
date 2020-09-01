@@ -9,7 +9,7 @@ AInteractable_Actor::AInteractable_Actor():
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-void AInteractable_Actor::OnInteract_Implementation(AActor* Caller)
+void AInteractable_Actor::Action_Implementation()
 {
 	Destroy();
 }

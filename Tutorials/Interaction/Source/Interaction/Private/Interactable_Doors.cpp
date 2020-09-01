@@ -9,12 +9,7 @@ AInteractable_Doors::AInteractable_Doors() :
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-void AInteractable_Doors::OnInteract_Implementation(AActor* Caller)
-{
-	Action();
-}
-
-void AInteractable_Doors::Action()
+void AInteractable_Doors::Action_Implementation()
 {
 	bDoor_Condition = !bDoor_Condition;
 	bDoor_Condition ? Open_Door() : Close_Door();
