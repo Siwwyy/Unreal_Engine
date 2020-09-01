@@ -26,8 +26,6 @@ protected:
 
 	bool bDoor_Condition;
 
-private:	
-	void Open_Door();
-
-	void Close_Door();
+private:
+	void Toggle_Door();
 };

@@ -11,20 +11,13 @@ AInteractable_Doors::AInteractable_Doors() :
 
 void AInteractable_Doors::Action_Implementation()
 {
+	Toggle_Door();
+}
+
+void AInteractable_Doors::Toggle_Door()
+{
+	FRotator New_Rotation = GetActorRotation();
 	bDoor_Condition = !bDoor_Condition;
-	bDoor_Condition ? Open_Door() : Close_Door();
-}
-
-void AInteractable_Doors::Open_Door()
-{
-	FRotator New_Rotation = GetActorRotation();
-	New_Rotation.Yaw += fDoor_Opening_Angle;	//current rotation increased by ninety degrees
-	SetActorRotation(New_Rotation);
-}
-
-void AInteractable_Doors::Close_Door()
-{
-	FRotator New_Rotation = GetActorRotation();
-	New_Rotation.Yaw -= fDoor_Opening_Angle;	//current rotation increased by ninety degrees
+	bDoor_Condition ? New_Rotation.Yaw += fDoor_Opening_Angle : New_Rotation.Yaw -= fDoor_Opening_Angle;
 	SetActorRotation(New_Rotation);
 }
