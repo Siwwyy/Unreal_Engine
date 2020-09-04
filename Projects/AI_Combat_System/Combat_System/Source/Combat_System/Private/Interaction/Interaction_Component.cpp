@@ -39,7 +39,8 @@ void UInteraction_Component::Interaction()
 
 void UInteraction_Component::HandleHighlight()
 {
-	AActor* interactable = FindActorInLineOfSide();
+	//AActor* interactable = FindActorInLineOfSide();
+	AActor* interactable = FindActorInLineOfBone("head");
 	if (interactable)
 	{
 		if (interactable == FocusedActor)
@@ -87,6 +88,31 @@ AActor* UInteraction_Component::FindActorInLineOfSide()
 	Player->GetController()->GetPlayerViewPoint(Location, Rotator);
 
 	FVector start = Location;
+	FVector end = start + (Rotator.Vector() * fInteractionDistance);
+
+	GetWorld()->LineTraceSingleByChannel(Hit,
+		start,
+		end,
+		ECC_Visibility,
+		TraceParams
+	);
+
+	return Hit.GetActor();
+}
+
+AActor* UInteraction_Component::FindActorInLineOfBone(const FName& sBoneName)
+{
+	FVector Player_Head_Location = Player->GetMesh()->GetBoneLocation(sBoneName, EBoneSpaces::WorldSpace);
+	FVector Location;
+	FRotator Rotator{};
+	FHitResult Hit(ForceInit);
+	Location.Normalize();	//to unit vector as a vector initialization
+	Rotator.Normalize();	//to unit vector as a vector initialization
+	Player->GetController()->GetPlayerViewPoint(Location, Rotator);
+
+	FVector start = Player_Head_Location + Rotator.Vector();
+	Player_Head_Location.Z += 30; 
+	//FVector start = Location;
 	FVector end = start + (Rotator.Vector() * fInteractionDistance);
 
 	GetWorld()->LineTraceSingleByChannel(Hit,

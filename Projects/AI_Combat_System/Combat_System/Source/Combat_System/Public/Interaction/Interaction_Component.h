@@ -22,6 +22,7 @@ public:
 	void HandleHighlight();
 
 	AActor* FindActorInLineOfSide();
+	AActor* FindActorInLineOfBone(const FName & sBoneName);
 
 	virtual void BeginPlay() override;
 
